@@ -16,11 +16,18 @@
 		83D60E2B27F442110094CDB5 /* Fruit_ScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E2A27F442110094CDB5 /* Fruit_ScannerTests.swift */; };
 		83D60E3527F442110094CDB5 /* Fruit_ScannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E3427F442110094CDB5 /* Fruit_ScannerUITests.swift */; };
 		83D60E3727F442110094CDB5 /* Fruit_ScannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E3627F442110094CDB5 /* Fruit_ScannerUITestsLaunchTests.swift */; };
-		83D60E4427F4437B0094CDB5 /* Login_System in Resources */ = {isa = PBXBuildFile; fileRef = 83D60E4327F4437B0094CDB5 /* Login_System */; };
 		83D60E4727F446260094CDB5 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 83D60E4627F446260094CDB5 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		83D60E4927F446260094CDB5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 83D60E4827F446260094CDB5 /* FirebaseAuth */; };
 		83D60E4B27F446260094CDB5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 83D60E4A27F446260094CDB5 /* FirebaseFirestore */; };
 		83D60E5127F44CA00094CDB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83D60E5027F44C9D0094CDB5 /* GoogleService-Info.plist */; };
+		83D60E5B27F4500B0094CDB5 /* LoginFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5327F450090094CDB5 /* LoginFirstPageViewController.swift */; };
+		83D60E5C27F4500B0094CDB5 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5427F450090094CDB5 /* ForgotPasswordViewController.swift */; };
+		83D60E5D27F4500B0094CDB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5527F4500A0094CDB5 /* SignUpViewController.swift */; };
+		83D60E5E27F4500B0094CDB5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5627F4500A0094CDB5 /* Utilities.swift */; };
+		83D60E5F27F4500B0094CDB5 /* LoginHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5727F4500A0094CDB5 /* LoginHomeViewController.swift */; };
+		83D60E6027F4500B0094CDB5 /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5827F4500A0094CDB5 /* SignOut.swift */; };
+		83D60E6127F4500B0094CDB5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5927F4500A0094CDB5 /* Constant.swift */; };
+		83D60E6227F4500B0094CDB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5A27F4500B0094CDB5 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +61,15 @@
 		83D60E3027F442110094CDB5 /* Fruit_ScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Fruit_ScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D60E3427F442110094CDB5 /* Fruit_ScannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit_ScannerUITests.swift; sourceTree = "<group>"; };
 		83D60E3627F442110094CDB5 /* Fruit_ScannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit_ScannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		83D60E4327F4437B0094CDB5 /* Login_System */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Login_System; sourceTree = "<group>"; };
 		83D60E5027F44C9D0094CDB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		83D60E5327F450090094CDB5 /* LoginFirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFirstPageViewController.swift; sourceTree = "<group>"; };
+		83D60E5427F450090094CDB5 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		83D60E5527F4500A0094CDB5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		83D60E5627F4500A0094CDB5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		83D60E5727F4500A0094CDB5 /* LoginHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHomeViewController.swift; sourceTree = "<group>"; };
+		83D60E5827F4500A0094CDB5 /* SignOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
+		83D60E5927F4500A0094CDB5 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		83D60E5A27F4500B0094CDB5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +156,8 @@
 		83D60E4C27F446980094CDB5 /* View_Controller */ = {
 			isa = PBXGroup;
 			children = (
+				83D60E5227F44FE00094CDB5 /* LoginSystem */,
 				83D60E4D27F446AD0094CDB5 /* View */,
-				83D60E4327F4437B0094CDB5 /* Login_System */,
 			);
 			path = View_Controller;
 			sourceTree = "<group>";
@@ -153,6 +167,21 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		83D60E5227F44FE00094CDB5 /* LoginSystem */ = {
+			isa = PBXGroup;
+			children = (
+				83D60E5927F4500A0094CDB5 /* Constant.swift */,
+				83D60E5427F450090094CDB5 /* ForgotPasswordViewController.swift */,
+				83D60E5327F450090094CDB5 /* LoginFirstPageViewController.swift */,
+				83D60E5727F4500A0094CDB5 /* LoginHomeViewController.swift */,
+				83D60E5A27F4500B0094CDB5 /* LoginViewController.swift */,
+				83D60E5827F4500A0094CDB5 /* SignOut.swift */,
+				83D60E5527F4500A0094CDB5 /* SignUpViewController.swift */,
+				83D60E5627F4500A0094CDB5 /* Utilities.swift */,
+			);
+			path = LoginSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D60E2027F442110094CDB5 /* LaunchScreen.storyboard in Resources */,
-				83D60E4427F4437B0094CDB5 /* Login_System in Resources */,
 				83D60E5127F44CA00094CDB5 /* GoogleService-Info.plist in Resources */,
 				83D60E1D27F442110094CDB5 /* Assets.xcassets in Resources */,
 				83D60E1827F4420E0094CDB5 /* Main.storyboard in Resources */,
@@ -296,9 +324,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D60E6027F4500B0094CDB5 /* SignOut.swift in Sources */,
+				83D60E5D27F4500B0094CDB5 /* SignUpViewController.swift in Sources */,
+				83D60E5F27F4500B0094CDB5 /* LoginHomeViewController.swift in Sources */,
 				83D60E1B27F4420E0094CDB5 /* Fruit_Scanner.xcdatamodeld in Sources */,
+				83D60E5E27F4500B0094CDB5 /* Utilities.swift in Sources */,
+				83D60E5C27F4500B0094CDB5 /* ForgotPasswordViewController.swift in Sources */,
 				83D60E1127F4420E0094CDB5 /* AppDelegate.swift in Sources */,
+				83D60E6127F4500B0094CDB5 /* Constant.swift in Sources */,
+				83D60E5B27F4500B0094CDB5 /* LoginFirstPageViewController.swift in Sources */,
 				83D60E1327F4420E0094CDB5 /* SceneDelegate.swift in Sources */,
+				83D60E6227F4500B0094CDB5 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
