@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qYC-Cr-Pws">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -27,7 +27,7 @@
         <!--Login Home View Controller-->
         <scene sceneID="bgh-Gg-Uk4">
             <objects>
-                <viewController id="qek-xj-0C1" customClass="LoginHomeViewController" customModule="FypTest_APP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qek-xj-0C1" customClass="LoginHomeViewController" customModule="Fruit_Scanner" customModuleProvider="target" sceneMemberID="viewController">
                     <string key="storyboardIdentifier" base64-UTF8="YES">
 TEgQVkM
 </string>
@@ -74,7 +74,7 @@ TEgQVkM
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="Z4b-xA-Adf" kind="show" id="Yj4-pl-0XX"/>
+                                            <segue destination="Z4b-xA-Adf" kind="show" id="iwv-Ap-2og"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -100,16 +100,16 @@ TEgQVkM
         <!--Login View Controller-->
         <scene sceneID="LD3-XQ-OXJ">
             <objects>
-                <viewController storyboardIdentifier="loginVC" id="Z4b-xA-Adf" customClass="LoginViewController" customModule="FypTest_APP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="Z4b-xA-Adf" customClass="LoginViewController" customModule="Fruit_Scanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="llh-ZR-O3s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0vJ-jU-SAW">
-                                <rect key="frame" x="40" y="112" width="334" height="250"/>
+                                <rect key="frame" x="40" y="111.99999999999997" width="334" height="314.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="puiwaichan1996@hotmail.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sjp-hy-9Kl">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="C2m-fc-A62"/>
                                         </constraints>
@@ -118,30 +118,26 @@ TEgQVkM
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234qwer@QWER" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Qx-Vk-xbP">
-                                        <rect key="frame" x="0.0" y="54" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="67" width="334" height="46.666666666666657"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAu-ou-XPN">
-                                        <rect key="frame" x="0.0" y="108" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="133.66666666666666" width="334" height="47"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login"/>
-                                        <connections>
-                                            <action selector="loginTapped:" destination="Z4b-xA-Adf" eventType="touchUpInside" id="e0l-ae-IX6"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prS-t6-5Fi">
-                                        <rect key="frame" x="0.0" y="162" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="200.66666666666669" width="334" height="46.666666666666657"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password? Click It"/>
                                         <connections>
-                                            <action selector="ForgotPasswordBtnOnTap:" destination="Z4b-xA-Adf" eventType="touchUpInside" id="2YW-Gu-7ls"/>
                                             <segue destination="oz6-sA-2ge" kind="show" id="Uow-Ik-2Kg"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-xr-vw6">
-                                        <rect key="frame" x="0.0" y="216" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="267.33333333333331" width="334" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" systemColor="systemPinkColor"/>
                                         <nil key="highlightedColor"/>
@@ -165,31 +161,24 @@ TEgQVkM
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d5m-qb-R1Y"/>
-                    <connections>
-                        <outlet property="ForgotpasswordBtn" destination="prS-t6-5Fi" id="i51-to-mDS"/>
-                        <outlet property="emailTextField" destination="Sjp-hy-9Kl" id="4E9-L1-f6P"/>
-                        <outlet property="errorLabel" destination="JXK-xr-vw6" id="XbX-hI-mFm"/>
-                        <outlet property="loginButton" destination="MAu-ou-XPN" id="EQV-MM-F5o"/>
-                        <outlet property="passwordTextField" destination="7Qx-Vk-xbP" id="iBl-7z-CeH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6k-QQ-ZOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786" y="-703"/>
+            <point key="canvasLocation" x="-746" y="-703"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Qze-Cz-GEj">
             <objects>
-                <viewController id="WxM-BC-xSA" customClass="SignUpViewController" customModule="FypTest_APP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WxM-BC-xSA" customClass="SignUpViewController" customModule="Fruit_Scanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I3i-ui-wus">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NFj-kB-9zC">
-                                <rect key="frame" x="40" y="121" width="334" height="358"/>
+                                <rect key="frame" x="40" y="120.99999999999997" width="334" height="425.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwf-Ja-HUt">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="43.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="MdS-lr-fua"/>
                                         </constraints>
@@ -197,27 +186,27 @@ TEgQVkM
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEk-mb-K4A">
-                                        <rect key="frame" x="0.0" y="54" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="63.666666666666657" width="334" height="43.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MNG-fj-bAY">
-                                        <rect key="frame" x="0.0" y="108" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="127.33333333333336" width="334" height="43.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZsS-Dh-IOv">
-                                        <rect key="frame" x="0.0" y="162" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="191" width="334" height="43.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khT-2y-JRR">
-                                        <rect key="frame" x="0.0" y="216" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="254.33333333333329" width="334" height="43.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dck-Rc-tq0">
-                                        <rect key="frame" x="0.0" y="270" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="318" width="334" height="43.666666666666686"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                         <connections>
@@ -225,7 +214,7 @@ TEgQVkM
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djW-FY-YZB">
-                                        <rect key="frame" x="0.0" y="324" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="381.66666666666669" width="334" height="43.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" systemColor="systemPurpleColor"/>
                                         <nil key="highlightedColor"/>
@@ -268,19 +257,19 @@ TEgQVkM
         <!--Forgot Password View Controller-->
         <scene sceneID="jFV-pa-Y0a">
             <objects>
-                <viewController id="oz6-sA-2ge" customClass="ForgotPasswordViewController" customModule="FypTest_APP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oz6-sA-2ge" customClass="ForgotPasswordViewController" customModule="Fruit_Scanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8E8-Kx-gkh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Your Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcX-Fg-y6Y">
-                                <rect key="frame" x="31" y="104" width="352" height="80.5"/>
+                                <rect key="frame" x="31" y="104" width="352" height="80.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-rc-DtL">
-                                <rect key="frame" x="40" y="251.5" width="334" height="100"/>
+                                <rect key="frame" x="40" y="251.33333333333337" width="334" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBj-CZ-R5p">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -291,7 +280,7 @@ TEgQVkM
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXo-88-LYK">
-                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                                        <rect key="frame" x="0.0" y="59.999999999999972" width="334" height="40"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background">

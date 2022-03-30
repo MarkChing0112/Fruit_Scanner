@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>941586635481-nea3t3qgoamg95cgudalli292j31s7d2.apps.googleusercontent.com</string>
+	<string>941586635481-qqeuir09ljkkufvhbjvu9k786hriomj4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.941586635481-nea3t3qgoamg95cgudalli292j31s7d2</string>
+	<string>com.googleusercontent.apps.941586635481-qqeuir09ljkkufvhbjvu9k786hriomj4</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDLe2meVvhWu1Fxxq_ydawyM_XxkVAxM-M</string>
 	<key>GCM_SENDER_ID</key>
@@ -19,16 +19,16 @@
 	<key>STORAGE_BUCKET</key>
 	<string>fruitscanner-26088.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:941586635481:ios:a597706f2a29f7d52efcc8</string>
+	<string>1:941586635481:ios:5e42482bbab827152efcc8</string>
 </dict>
 </plist>
