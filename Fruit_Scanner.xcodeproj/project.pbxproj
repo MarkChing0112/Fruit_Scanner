@@ -17,6 +17,7 @@
 		83D60E2B27F442110094CDB5 /* Fruit_ScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E2A27F442110094CDB5 /* Fruit_ScannerTests.swift */; };
 		83D60E3527F442110094CDB5 /* Fruit_ScannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E3427F442110094CDB5 /* Fruit_ScannerUITests.swift */; };
 		83D60E3727F442110094CDB5 /* Fruit_ScannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E3627F442110094CDB5 /* Fruit_ScannerUITestsLaunchTests.swift */; };
+		83D60E4427F4437B0094CDB5 /* Login_System in Resources */ = {isa = PBXBuildFile; fileRef = 83D60E4327F4437B0094CDB5 /* Login_System */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		83D60E3027F442110094CDB5 /* Fruit_ScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Fruit_ScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D60E3427F442110094CDB5 /* Fruit_ScannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit_ScannerUITests.swift; sourceTree = "<group>"; };
 		83D60E3627F442110094CDB5 /* Fruit_ScannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit_ScannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83D60E4327F4437B0094CDB5 /* Login_System */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Login_System; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		83D60E0F27F4420E0094CDB5 /* Fruit_Scanner */ = {
 			isa = PBXGroup;
 			children = (
+				83D60E4327F4437B0094CDB5 /* Login_System */,
 				83D60E1027F4420E0094CDB5 /* AppDelegate.swift */,
 				83D60E1227F4420E0094CDB5 /* SceneDelegate.swift */,
 				83D60E1427F4420E0094CDB5 /* ViewController.swift */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D60E2027F442110094CDB5 /* LaunchScreen.storyboard in Resources */,
+				83D60E4427F4437B0094CDB5 /* Login_System in Resources */,
 				83D60E1D27F442110094CDB5 /* Assets.xcassets in Resources */,
 				83D60E1827F4420E0094CDB5 /* Main.storyboard in Resources */,
 			);
