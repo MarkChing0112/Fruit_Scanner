@@ -83,9 +83,9 @@ class SignUpViewController: UIViewController {
     //go to home view
     func transitionToHome() {
         
-        let firstPageNavigationController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstPageNavigationController) as? FirstPageNavigationController
+        let firstPageViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstPageViewController) as? FirstPageViewController
         
-        view.window?.rootViewController = firstPageNavigationController
+        view.window?.rootViewController = firstPageViewController
         view.window?.makeKeyAndVisible()
         
     }
@@ -109,10 +109,9 @@ class SignUpViewController: UIViewController {
                 self.showError("Error creating user")
             }
             else {
-                let ref = Database.database().reference()
                 // User was created successfully, now store the first name and last name
                 let db = Firestore.firestore()
-                ref.child("users").child(result!.user.uid).setValue(["User_Name":User_Name,"firstname":firstName, "lastname":lastName,"uid": result!.user.uid ])
+
                 db.collection("users").document("Senior").setData(["User_Name":User_Name,"firstname":firstName, "lastname":lastName,"uid": result!.user.uid ]) { (error) in
                     
                     if error != nil {

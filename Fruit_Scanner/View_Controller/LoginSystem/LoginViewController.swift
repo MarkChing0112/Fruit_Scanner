@@ -50,9 +50,9 @@ class LoginViewController: UIViewController {
             }
             else {
                 
-                let firstPageNavigationController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstPageNavigationController) as? FirstPageNavigationController
+                let firstPageViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstPageViewController) as? FirstPageViewController
                 
-                self.view.window?.rootViewController = firstPageNavigationController
+                self.view.window?.rootViewController = firstPageViewController
                 self.view.window?.makeKeyAndVisible()
             }
         }

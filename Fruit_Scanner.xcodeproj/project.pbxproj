@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83C3502E27F9904700788E4C /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3502D27F9904700788E4C /* FirstPageViewController.swift */; };
 		83D60E1127F4420E0094CDB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E1027F4420E0094CDB5 /* AppDelegate.swift */; };
 		83D60E1327F4420E0094CDB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E1227F4420E0094CDB5 /* SceneDelegate.swift */; };
 		83D60E1827F4420E0094CDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D60E1627F4420E0094CDB5 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83C3502D27F9904700788E4C /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		83D60E0D27F4420E0094CDB5 /* Fruit_Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruit_Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D60E1027F4420E0094CDB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83D60E1227F4420E0094CDB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		83D60E4D27F446AD0094CDB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83C3502D27F9904700788E4C /* FirstPageViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C3502E27F9904700788E4C /* FirstPageViewController.swift in Sources */,
 				83D60E6027F4500B0094CDB5 /* SignOut.swift in Sources */,
 				83D60E5D27F4500B0094CDB5 /* SignUpViewController.swift in Sources */,
 				83D60E5F27F4500B0094CDB5 /* LoginHomeViewController.swift in Sources */,
