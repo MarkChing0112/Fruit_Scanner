@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qYC-Cr-Pws">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Yn-8N-Z57">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -150,7 +150,7 @@ TEgQVkM
                                         <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background" image="FullBtn_themeGradient"/>
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Go To Scanner!!!!">
+                                                <fragment content="Start To Scan Fruit">
                                                     <attributes>
                                                         <font key="NSFont" size="24" name="HelveticaNeue-BoldItalic"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -195,6 +195,21 @@ TEgQVkM
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQE-AW-mep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2562.3188405797105" y="103.79464285714285"/>
+        </scene>
+        <!--FruitAI View Controller-->
+        <scene sceneID="DTH-am-pdd">
+            <objects>
+                <viewController id="8Yn-8N-Z57" customClass="FruitAIViewController" customModule="Fruit_Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NNO-4N-kd5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kY8-Eg-BNm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LvM-fZ-7e4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1604.3478260869567" y="103.79464285714285"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="LD3-XQ-OXJ">
