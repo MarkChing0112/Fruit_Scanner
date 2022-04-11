@@ -24,7 +24,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         label.numberOfLines = 0
         return label
     }()
-    private let Clabel: UILabel = {
+    private var Clabel: UILabel = {
         let Clabel = UILabel()
         Clabel.textAlignment = .center
         Clabel.text = ""
@@ -45,6 +45,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tap)
     }
+    
     @objc func didTapImage() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
@@ -73,25 +74,31 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     private func analyzeImage(immage: UIImage?) {
-        guard let buffer = immage?.resize(size: CGSize(width: 299, height: 299))?
-                .getCVPixelBuffer() else {
+        guard let buffer = immage?.getCVPixelBuffer() else {
             return
         }
         
         do{
             
-            let config = MLModelConfiguration()
-            let model = try FruitRecognition_5(configuration: config)
-            let input = FruitRecognition_5Input(image: buffer)
+            let model = try! FruitRecognition_5(configuration: MLModelConfiguration())
+           // let input = FruitRecognition_5Input(image: buffer)
             
             
-            let output = try model.prediction(input: input)
-            let probs = output.classLabelProbs[output.classLabel]
-            let text = output.classLabel
-            let confidence = probs ?? 0
-            Clabel.text = "\(String(format: "%.2f",confidence * 100)) %"
-            label.text = "fruit detected:  \(text)"
-            print("Fruit :\(text) && conf\(String(confidence))")
+           let output = try? model.prediction(image: buffer)
+            
+            if let output = output {
+                let results = output.classLabelProbs.sorted { $0.1 > $1.1}
+                let result = results.map{(key, value) in
+                    return "\(key) = \(String(format: "%.2f", value * 100))%"
+                }.joined(separator: "\n")
+                self.label.text = result
+            }
+           // let probs = output.classLabelProbs[output.classLabel]
+           // let text = output.classLabel
+           // let confidence = probs ?? 0
+           // Clabel.text = "\(String(format: "%.2f",confidence * 100)) %"
+           // label.text = "fruit detected:  \(text)"
+           // print("Fruit :\(text) && conf\(String(confidence))")
         }
         catch{
             print(error.localizedDescription)

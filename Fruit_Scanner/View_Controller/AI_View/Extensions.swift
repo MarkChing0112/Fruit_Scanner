@@ -2,7 +2,7 @@
 //  Extensions.swift
 //  Fruit_Scanner
 //
-//  Created by kin ming ching on 11/4/2022.
+//  Created by Mark ching on 11/4/2022.
 //
 import UIKit
 
