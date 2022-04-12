@@ -83,9 +83,9 @@ class SignUpViewController: UIViewController {
     //go to home view
     func transitionToHome() {
         
-        let firstPageViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstPageViewController) as? FirstPageViewController
+        let firstPageNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstPageNavigationViewController) as? FirstPageNavigationViewController
         
-        view.window?.rootViewController = firstPageViewController
+        view.window?.rootViewController = firstPageNavigationViewController
         view.window?.makeKeyAndVisible()
         
     }

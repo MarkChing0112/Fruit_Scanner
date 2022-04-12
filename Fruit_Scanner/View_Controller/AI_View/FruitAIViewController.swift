@@ -8,9 +8,13 @@
 import UIKit
 import CoreML
 import Vision
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 
 class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
-    
+    @IBOutlet weak var SaveBtn: UIButton!
+    private var fruit_Name : String!
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
@@ -33,6 +37,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(label)
         view.addSubview(imageView)
         view.addSubview(Clabel)
@@ -52,6 +57,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.delegate = self
         present(picker, animated: true)
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         imageView.frame = CGRect(
@@ -80,25 +86,26 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         do{
             
-            let model = try! FruitRecognition_5(configuration: MLModelConfiguration())
-           // let input = FruitRecognition_5Input(image: buffer)
+           let model = try! FruitRecognition_5(configuration: MLModelConfiguration())
+           let input = FruitRecognition_5Input(image: buffer)
             
             
-           let output = try? model.prediction(image: buffer)
+           let output = try model.prediction(input: input)
             
-            if let output = output {
-                let results = output.classLabelProbs.sorted { $0.1 > $1.1}
-                let result = results.map{(key, value) in
-                    return "\(key) = \(String(format: "%.2f", value * 100))%"
-                }.joined(separator: "\n")
-                self.label.text = result
-            }
-           // let probs = output.classLabelProbs[output.classLabel]
-           // let text = output.classLabel
-           // let confidence = probs ?? 0
-           // Clabel.text = "\(String(format: "%.2f",confidence * 100)) %"
-           // label.text = "fruit detected:  \(text)"
-           // print("Fruit :\(text) && conf\(String(confidence))")
+            //if let output = output {
+            //    let results = output.classLabelProbs.sorted { $0.1 > $1.1}
+            //    let result = results.map{(key, value) in
+           //         return "\(key) = \(String(format: "%.2f", value * 100))%"
+           //     }.joined(separator: "\n")
+           //     self.label.text = result
+           // }
+            let probs = output.classLabelProbs[output.classLabel]
+            let text = output.classLabel
+            let confidence = probs ?? 0
+            fruit_Name = text
+            Clabel.text = "\(String(format: "%.2f",confidence * 100)) %"
+            label.text = "fruit detected:  \(text)"
+            print("Fruit :\(text) && conf\(String(confidence))")
         }
         catch{
             print(error.localizedDescription)
@@ -118,6 +125,44 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         imageView.image = immage
         analyzeImage(immage: immage)
     }
-
-
+    
+    func toRecordPage(){
+        let recordViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.recordViewController) as? RecordViewController
+        
+        self.view.window?.rootViewController = recordViewController
+        self.view.window?.makeKeyAndVisible()
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Error!!", message: "You don't have select the image yet!!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func showConfirmAlert() {
+        let alert = UIAlertController(title: "Save your fruit data", message: "Are you sure to save the fruit record", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Sure!", style: .default, handler: {action in self.SaveFruitRecognitionResult()}))
+        alert.addAction(UIAlertAction(title: "no!", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func SaveFruitRecognitionResult(){
+        let db = Firestore.firestore()
+        let randomint = Int.random(in:0..<100)
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser
+            if let user = user {
+                db.collection(user.uid).document("\(fruit_Name!)_\(String(randomint))").setData(["FruitName": label.text!,"fruitFreshLevel":Clabel.text!,"lastUpdated":FieldValue.serverTimestamp()])
+            }
+        }
+        
+    }
+    @IBAction func SaveBtnOnTap(_ sender: Any) {
+        if (imageView.image == UIImage(systemName: "photo")){
+            showAlert()
+        }else{
+            showConfirmAlert()
+        }
+        
+    }
 }

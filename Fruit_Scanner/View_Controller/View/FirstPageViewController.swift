@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 class FirstPageViewController: UIViewController {
 
-    @IBOutlet weak var SignOutBtn: UINavigationItem!
+
     @IBAction func SignOutBtnOnTap(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do{
