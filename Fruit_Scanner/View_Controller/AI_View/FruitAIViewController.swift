@@ -14,6 +14,7 @@ import FirebaseFirestore
 
 class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     @IBOutlet weak var SaveBtn: UIButton!
+    //declear
     private var fruit_Name : String!
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -35,6 +36,8 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         Clabel.numberOfLines = 0
         return Clabel
     }()
+    
+    //View didLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,7 +81,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
             height: 100
         )
     }
-    
+
     private func analyzeImage(immage: UIImage?) {
         guard let buffer = immage?.getCVPixelBuffer() else {
             return
@@ -111,6 +114,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
             print(error.localizedDescription)
         }
     }
+    
     // Image Picker
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // cancelled
@@ -126,13 +130,22 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         analyzeImage(immage: immage)
     }
     
+    @IBAction func SaveBtnOnTap(_ sender: Any) {
+        if (imageView.image == UIImage(systemName: "photo")){
+            showAlert()
+        }else{
+            showConfirmAlert()
+        }
+    }
+    
+    //to RecordPage
     func toRecordPage(){
         let recordViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.recordViewController) as? RecordViewController
         
         self.view.window?.rootViewController = recordViewController
         self.view.window?.makeKeyAndVisible()
     }
-    
+    //Show Alert
     func showAlert() {
         let alert = UIAlertController(title: "Error!!", message: "You don't have select the image yet!!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
@@ -145,7 +158,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         alert.addAction(UIAlertAction(title: "no!", style: .cancel, handler: nil))
         present(alert, animated: true)
     }
-    
+    //Save data to firestore
     func SaveFruitRecognitionResult(){
         let db = Firestore.firestore()
         let randomint = Int.random(in:0..<100)
@@ -154,14 +167,6 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
             if let user = user {
                 db.collection(user.uid).document("\(fruit_Name!)_\(String(randomint))").setData(["FruitName": label.text!,"fruitFreshLevel":Clabel.text!,"lastUpdated":FieldValue.serverTimestamp()])
             }
-        }
-        
-    }
-    @IBAction func SaveBtnOnTap(_ sender: Any) {
-        if (imageView.image == UIImage(systemName: "photo")){
-            showAlert()
-        }else{
-            showConfirmAlert()
         }
         
     }
