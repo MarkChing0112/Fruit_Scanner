@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5DF5735E280468220047C34C /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5735C280468210047C34C /* Login.swift */; };
-		5DF5735F280468220047C34C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5735D280468220047C34C /* LoginView.swift */; };
-		83A6E7E528056E2400A99B6D /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6E7E428056E2400A99B6D /* RecordViewController.swift */; };
 		83A6E7E728057F2400A99B6D /* FirstPageNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6E7E628057F2400A99B6D /* FirstPageNavigationViewController.swift */; };
 		83B4C103280409C100948BFF /* FruitAIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4C102280409C100948BFF /* FruitAIViewController.swift */; };
 		83B4C1072804105300948BFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4C1062804105300948BFF /* Extensions.swift */; };
@@ -35,6 +32,10 @@
 		83D60E5F27F4500B0094CDB5 /* LoginHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5727F4500A0094CDB5 /* LoginHomeViewController.swift */; };
 		83D60E6127F4500B0094CDB5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5927F4500A0094CDB5 /* Constant.swift */; };
 		83D60E6227F4500B0094CDB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5A27F4500B0094CDB5 /* LoginViewController.swift */; };
+		83DC04732806FAE000F0EEC3 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC04722806FAE000F0EEC3 /* Fruit.swift */; };
+		83DC048B2807150900F0EEC3 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC048A2807150800F0EEC3 /* RecordTableViewController.swift */; };
+		83DC048D2807152800F0EEC3 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC048C2807152800F0EEC3 /* RecordTableViewCell.swift */; };
+		83DC048F2807154400F0EEC3 /* FruitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC048E2807154400F0EEC3 /* FruitDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5DF5735C280468210047C34C /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		5DF5735D280468220047C34C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		83A6E7E428056E2400A99B6D /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		83A6E7E628057F2400A99B6D /* FirstPageNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageNavigationViewController.swift; sourceTree = "<group>"; };
 		83B4C102280409C100948BFF /* FruitAIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitAIViewController.swift; sourceTree = "<group>"; };
 		83B4C1062804105300948BFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -84,6 +82,10 @@
 		83D60E5727F4500A0094CDB5 /* LoginHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHomeViewController.swift; sourceTree = "<group>"; };
 		83D60E5927F4500A0094CDB5 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		83D60E5A27F4500B0094CDB5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		83DC04722806FAE000F0EEC3 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		83DC048A2807150800F0EEC3 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
+		83DC048C2807152800F0EEC3 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		83DC048E2807154400F0EEC3 /* FruitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,10 @@
 		83A6E7E328056E0500A99B6D /* Record */ = {
 			isa = PBXGroup;
 			children = (
-				83A6E7E428056E2400A99B6D /* RecordViewController.swift */,
+				83DC04722806FAE000F0EEC3 /* Fruit.swift */,
+				83DC048A2807150800F0EEC3 /* RecordTableViewController.swift */,
+				83DC048C2807152800F0EEC3 /* RecordTableViewCell.swift */,
+				83DC048E2807154400F0EEC3 /* FruitDetailViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -164,8 +169,6 @@
 				83D60E2127F442110094CDB5 /* Info.plist */,
 				83D60E5027F44C9D0094CDB5 /* GoogleService-Info.plist */,
 				83D60E1927F4420E0094CDB5 /* Fruit_Scanner.xcdatamodeld */,
-				5DF5735C280468210047C34C /* Login.swift */,
-				5DF5735D280468220047C34C /* LoginView.swift */,
 			);
 			path = Fruit_Scanner;
 			sourceTree = "<group>";
@@ -363,8 +366,10 @@
 			files = (
 				83C3502E27F9904700788E4C /* FirstPageViewController.swift in Sources */,
 				83D60E5D27F4500B0094CDB5 /* SignUpViewController.swift in Sources */,
-				83A6E7E528056E2400A99B6D /* RecordViewController.swift in Sources */,
+				83DC048D2807152800F0EEC3 /* RecordTableViewCell.swift in Sources */,
 				83D60E5F27F4500B0094CDB5 /* LoginHomeViewController.swift in Sources */,
+				83DC048F2807154400F0EEC3 /* FruitDetailViewController.swift in Sources */,
+				83DC048B2807150900F0EEC3 /* RecordTableViewController.swift in Sources */,
 				83D60E1B27F4420E0094CDB5 /* Fruit_Scanner.xcdatamodeld in Sources */,
 				83D60E5E27F4500B0094CDB5 /* Utilities.swift in Sources */,
 				83B4C10F28042D8500948BFF /* FruitRecognition 5.mlmodel in Sources */,
@@ -372,12 +377,11 @@
 				83D60E1127F4420E0094CDB5 /* AppDelegate.swift in Sources */,
 				83D60E6127F4500B0094CDB5 /* Constant.swift in Sources */,
 				83D60E5B27F4500B0094CDB5 /* LoginFirstPageViewController.swift in Sources */,
-				5DF5735E280468220047C34C /* Login.swift in Sources */,
 				83B4C1072804105300948BFF /* Extensions.swift in Sources */,
 				83D60E1327F4420E0094CDB5 /* SceneDelegate.swift in Sources */,
 				83A6E7E728057F2400A99B6D /* FirstPageNavigationViewController.swift in Sources */,
+				83DC04732806FAE000F0EEC3 /* Fruit.swift in Sources */,
 				83B4C103280409C100948BFF /* FruitAIViewController.swift in Sources */,
-				5DF5735F280468220047C34C /* LoginView.swift in Sources */,
 				83D60E6227F4500B0094CDB5 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
