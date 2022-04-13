@@ -58,7 +58,7 @@ class RecordTableViewController: UITableViewController {
         let storageRef = storage.reference()
         let fileRef = storageRef.child(fruit[indexPath.row].Fruit_URL)
         
-        fileRef.getData(maxSize: 1*80*80) { Data, Error in
+        fileRef.getData(maxSize: 10*255*255) { Data, Error in
             if Error == nil && Data != nil {
                     cell.FruitImage.image = UIImage(data: Data!)
             }

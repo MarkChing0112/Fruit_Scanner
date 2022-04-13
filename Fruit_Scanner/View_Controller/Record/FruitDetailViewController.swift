@@ -35,6 +35,7 @@ class FruitDetailViewController: UIViewController {
         
         FruitName_lbl.text = FruitName
         Fruit_DSClbl.text = Fruit_description
+        //get image
         fileRef.getData(maxSize: 1*255*255) { Data, Error in
             if Error == nil && Data != nil {
                 self.FruitImageView.image = UIImage(data: Data!)
