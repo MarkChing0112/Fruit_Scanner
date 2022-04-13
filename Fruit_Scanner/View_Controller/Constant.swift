@@ -12,8 +12,9 @@ struct Constants {
     struct Storyboard {
         static let loginFirstPageViewController = "LoginFPageC"
         static let firstPageViewController = "FPVC"
-        static let recordViewController = "RVC"
+        static let recordViewtableController = "RTVC"
         static let firstPageNavigationViewController = "FPNVC"
+
     }
     
     

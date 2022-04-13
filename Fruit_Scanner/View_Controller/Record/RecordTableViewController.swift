@@ -8,16 +8,17 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-
+import FirebaseStorage
 class RecordTableViewController: UITableViewController {
     //refer to Fruit object file
     var fruit = [Fruit]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        getFruitDetail()
         self.tableView.reloadData()
     }
+    
     func getFruitDetail() {
         let db = Firestore.firestore()
         
@@ -52,21 +53,25 @@ class RecordTableViewController: UITableViewController {
     //cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!  RecordTableViewCell
+        //get firebase storage image
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let fileRef = storageRef.child(fruit[indexPath.row].Fruit_URL)
         
-        //URL Firebase storage image to TableView Cell
-        if let url = URL(string: fruit[indexPath.row].Fruit_URL){
-            if let data = try? Data(contentsOf: url){
-                if let image = UIImage(data: data){
-                    cell.FruitImage.image = image
-                }
+        fileRef.getData(maxSize: 1*80*80) { Data, Error in
+            if Error == nil && Data != nil {
+                    cell.FruitImage.image = UIImage(data: Data!)
             }
         }
+                    
+        //display firebase store data
         cell.FruitName.text = fruit[indexPath.row].Fruit1
 
-        // Configure the cell...
+        
         return cell
     }
-    // pass data to next page
+    
+    // pass data to record page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? FruitDetailViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {

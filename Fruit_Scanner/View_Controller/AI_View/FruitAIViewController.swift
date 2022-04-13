@@ -140,10 +140,10 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //to RecordPage
     func toRecordPage(){
-        let recordViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.recordViewController) as? RecordViewController
+   //     let recordViewtalbeController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.recordtableViewController) as? RecordTableViewController
         
-        self.view.window?.rootViewController = recordViewController
-        self.view.window?.makeKeyAndVisible()
+     //   self.view.window?.rootViewController = recordViewtableController
+     //   self.view.window?.makeKeyAndVisible()
     }
     //Show Alert
     func showAlert() {
