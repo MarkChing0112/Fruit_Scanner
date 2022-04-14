@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseStorage
-class RecordTableViewController: UITableViewController {
+class FruitDetailTableViewController: UITableViewController {
     //refer to Fruit object file
     var fruit = [Fruit]()
     
@@ -29,8 +29,9 @@ class RecordTableViewController: UITableViewController {
                     self.fruit = snapshot.documents.map {
                         Fruitdata in
                         return Fruit(Fruit1: Fruitdata["Fruit_Name"] as? String ?? "",
-                                     Fruit_Description: Fruitdata["Fruit_Description"] as? String ?? "",
-                                     Fruit_URL: Fruitdata["Fruit_URL"] as? String ?? "" )
+                                     Fruit_NV: Fruitdata["Fruit_NV"] as? String ?? "",
+                                     Fruit_PD: Fruitdata["Fruit_PD"] as? String ?? "",
+                                     Fruit_URL: Fruitdata["Fruit_URL"] as? String ?? "")
                     }
                     
                     DispatchQueue.main.async {
@@ -52,7 +53,7 @@ class RecordTableViewController: UITableViewController {
     }
     //cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!  RecordTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!  FruitDatailTableViewCell
         //get firebase storage image
         let storage = Storage.storage()
         let storageRef = storage.reference()
@@ -76,7 +77,8 @@ class RecordTableViewController: UITableViewController {
         if let destination = segue.destination as? FruitDetailViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 destination.FruitName = fruit[indexPath.row].Fruit1
-                destination.Fruit_description = fruit[indexPath.row].Fruit_Description
+                destination.Fruit_NV = fruit[indexPath.row].Fruit_NV
+                destination.Fruit_PD = fruit[indexPath.row].Fruit_PD
                 destination.FruitImage = fruit[indexPath.row].Fruit_URL
                 
             }

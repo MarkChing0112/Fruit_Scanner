@@ -13,11 +13,15 @@ import FirebaseStorage
 class FruitDetailViewController: UIViewController {
 
     var FruitName: String!
-    var Fruit_description: String!
+    var Fruit_NV: String!
+    var Fruit_PD: String!
     var FruitImage: String!
     
     @IBOutlet weak var FruitName_lbl: UILabel!
     @IBOutlet weak var Fruit_DSClbl: UILabel!
+    @IBOutlet weak var NF_LBL: UILabel!
+    @IBOutlet weak var Sessionlbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var FruitImageView: UIImageView!
     
     
@@ -33,8 +37,13 @@ class FruitDetailViewController: UIViewController {
         let storageRef = storage.reference()
         let fileRef = storageRef.child(FruitImage)
         
-        FruitName_lbl.text = FruitName
-        Fruit_DSClbl.text = Fruit_description
+    
+        FruitName_lbl.text = "Nurtrvalue Of \(FruitName!)"
+        Sessionlbl.text = ""
+        titleLbl.text = "Nutrition Facts of"
+        Fruit_DSClbl.numberOfLines = 0
+        Fruit_DSClbl.text = "\(Fruit_NV!)"
+        Sessionlbl.text = Fruit_PD
         //get image
         fileRef.getData(maxSize: 1*255*255) { Data, Error in
             if Error == nil && Data != nil {

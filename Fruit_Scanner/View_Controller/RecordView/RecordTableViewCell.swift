@@ -2,16 +2,13 @@
 //  RecordTableViewCell.swift
 //  Fruit_Scanner
 //
-//  Created by kin ming ching on 13/4/2022.
+//  Created by kin ming ching on 14/4/2022.
 //
 
 import UIKit
 
 class RecordTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var FruitName: UILabel!
-    @IBOutlet weak var FruitImage: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

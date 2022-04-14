@@ -9,6 +9,7 @@ import Foundation
 
 struct Fruit{
     var Fruit1 : String!
-    var Fruit_Description : String!
+    var Fruit_NV : String!
+    var Fruit_PD : String!
     var Fruit_URL : String!
 }

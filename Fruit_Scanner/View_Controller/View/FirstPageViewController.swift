@@ -24,9 +24,9 @@ class FirstPageViewController: UIViewController {
           }
     }
     func toHomeView(){
-        let namestoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = namestoryboard.instantiateViewController(withIdentifier: "LoginHomeViewController") as! LoginHomeViewController
-        view.window?.rootViewController = vc
+        let loginFirstPageViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginFirstPageViewController) as? LoginFirstPageViewController
+        
+        view.window?.rootViewController = loginFirstPageViewController
         view.window?.makeKeyAndVisible()
     }
     func showAlertS(){

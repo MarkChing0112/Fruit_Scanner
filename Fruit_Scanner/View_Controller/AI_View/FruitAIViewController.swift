@@ -11,12 +11,15 @@ import Vision
 import Firebase
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
+import SwiftUI
 
 class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     @IBOutlet weak var SaveBtn: UIButton!
     //declear
+
     private var fruit_Name : String!
-    private let imageView: UIImageView = {
+    private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
         imageView.contentMode = .scaleAspectFit
@@ -108,7 +111,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
             fruit_Name = text
             Clabel.text = "\(String(format: "%.2f",confidence * 100)) %"
             label.text = "fruit detected:  \(text)"
-            print("Fruit :\(text) && conf\(String(confidence))")
+            //print("Fruit :\(text) && conf\(String(confidence))")
         }
         catch{
             print(error.localizedDescription)
@@ -126,15 +129,44 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         guard let immage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
+        guard let imageData = immage.jpegData(compressionQuality: 0.8) else{
+            return
+        }
         imageView.image = immage
         analyzeImage(immage: immage)
+        
+        if (imageView.image == UIImage(systemName: "photo")){
+            showAlert()
+        }else{
+            let storageRef = Storage.storage().reference()
+
+            let db = Firestore.firestore()
+            let randomint = Int.random(in:0..<100)
+            if Auth.auth().currentUser != nil {
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    //set image path
+                    let path = "Record/Record\(String(Int.random(in: 1..<60))).jpg"
+                    let Ref = storageRef.child(path)
+                    //upload image and record to firesotre
+                    Ref.putData(imageData, metadata: nil){
+                        _, error in
+                        if error == nil{
+                            db.collection(user.uid).document("\(self.fruit_Name!)_\(String(randomint))").setData(["FruitName": self.label.text!,"fruitFreshLevel":self.Clabel.text!,"lastUpdated":FieldValue.serverTimestamp(),"Record_URL":path])
+                        }
+                    }
+
+                }
+            }
+            
+        }
     }
     
     @IBAction func SaveBtnOnTap(_ sender: Any) {
         if (imageView.image == UIImage(systemName: "photo")){
             showAlert()
         }else{
-            showConfirmAlert()
+           showConfirmAlert()
         }
     }
     
@@ -160,14 +192,18 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     //Save data to firestore
     func SaveFruitRecognitionResult(){
+        
         let db = Firestore.firestore()
         let randomint = Int.random(in:0..<100)
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
             if let user = user {
+                //set image path
+                //upload image and record to firesotre
                 db.collection(user.uid).document("\(fruit_Name!)_\(String(randomint))").setData(["FruitName": label.text!,"fruitFreshLevel":Clabel.text!,"lastUpdated":FieldValue.serverTimestamp()])
+                }
+
             }
         }
         
-    }
 }

@@ -12,6 +12,10 @@
 		8328468628072F1300C925BF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8328468528072F1300C925BF /* FirebaseDatabase */; };
 		8328468828072F1300C925BF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8328468728072F1300C925BF /* FirebaseFirestore */; };
 		8328468A28072F1300C925BF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8328468928072F1300C925BF /* FirebaseStorage */; };
+		8340364328081A3900485E77 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340364228081A3900485E77 /* RecordTableViewController.swift */; };
+		8340364528081A5400485E77 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340364428081A5400485E77 /* RecordViewController.swift */; };
+		8340364728081A5E00485E77 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340364628081A5E00485E77 /* Record.swift */; };
+		8340364928081A7000485E77 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340364828081A7000485E77 /* RecordTableViewCell.swift */; };
 		83A6E7E728057F2400A99B6D /* FirstPageNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6E7E628057F2400A99B6D /* FirstPageNavigationViewController.swift */; };
 		83B4C103280409C100948BFF /* FruitAIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4C102280409C100948BFF /* FruitAIViewController.swift */; };
 		83B4C1072804105300948BFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4C1062804105300948BFF /* Extensions.swift */; };
@@ -35,8 +39,8 @@
 		83D60E6127F4500B0094CDB5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5927F4500A0094CDB5 /* Constant.swift */; };
 		83D60E6227F4500B0094CDB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D60E5A27F4500B0094CDB5 /* LoginViewController.swift */; };
 		83DC04732806FAE000F0EEC3 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC04722806FAE000F0EEC3 /* Fruit.swift */; };
-		83DC048B2807150900F0EEC3 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC048A2807150800F0EEC3 /* RecordTableViewController.swift */; };
-		83DC048D2807152800F0EEC3 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC048C2807152800F0EEC3 /* RecordTableViewCell.swift */; };
+		83DC048B2807150900F0EEC3 /* FruitDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC048A2807150800F0EEC3 /* FruitDetailTableViewController.swift */; };
+		83DC048D2807152800F0EEC3 /* FruitDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC048C2807152800F0EEC3 /* FruitDetailTableViewCell.swift */; };
 		83DC048F2807154400F0EEC3 /* FruitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC048E2807154400F0EEC3 /* FruitDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8340364228081A3900485E77 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
+		8340364428081A5400485E77 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		8340364628081A5E00485E77 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		8340364828081A7000485E77 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		83A6E7E628057F2400A99B6D /* FirstPageNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageNavigationViewController.swift; sourceTree = "<group>"; };
 		83B4C102280409C100948BFF /* FruitAIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitAIViewController.swift; sourceTree = "<group>"; };
 		83B4C1062804105300948BFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -85,8 +93,8 @@
 		83D60E5927F4500A0094CDB5 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		83D60E5A27F4500B0094CDB5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		83DC04722806FAE000F0EEC3 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
-		83DC048A2807150800F0EEC3 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
-		83DC048C2807152800F0EEC3 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		83DC048A2807150800F0EEC3 /* FruitDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailTableViewController.swift; sourceTree = "<group>"; };
+		83DC048C2807152800F0EEC3 /* FruitDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailTableViewCell.swift; sourceTree = "<group>"; };
 		83DC048E2807154400F0EEC3 /* FruitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,15 +135,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		83A6E7E328056E0500A99B6D /* Record */ = {
+		83403641280819ED00485E77 /* RecordView */ = {
+			isa = PBXGroup;
+			children = (
+				8340364228081A3900485E77 /* RecordTableViewController.swift */,
+				8340364428081A5400485E77 /* RecordViewController.swift */,
+				8340364628081A5E00485E77 /* Record.swift */,
+				8340364828081A7000485E77 /* RecordTableViewCell.swift */,
+			);
+			path = RecordView;
+			sourceTree = "<group>";
+		};
+		83A6E7E328056E0500A99B6D /* FruitDetailView */ = {
 			isa = PBXGroup;
 			children = (
 				83DC04722806FAE000F0EEC3 /* Fruit.swift */,
-				83DC048A2807150800F0EEC3 /* RecordTableViewController.swift */,
-				83DC048C2807152800F0EEC3 /* RecordTableViewCell.swift */,
+				83DC048A2807150800F0EEC3 /* FruitDetailTableViewController.swift */,
+				83DC048C2807152800F0EEC3 /* FruitDetailTableViewCell.swift */,
 				83DC048E2807154400F0EEC3 /* FruitDetailViewController.swift */,
 			);
-			path = Record;
+			path = FruitDetailView;
 			sourceTree = "<group>";
 		};
 		83B4C1012804099B00948BFF /* AI_View */ = {
@@ -206,7 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				83D60E5927F4500A0094CDB5 /* Constant.swift */,
-				83A6E7E328056E0500A99B6D /* Record */,
+				83403641280819ED00485E77 /* RecordView */,
+				83A6E7E328056E0500A99B6D /* FruitDetailView */,
 				83B4C1012804099B00948BFF /* AI_View */,
 				83D60E5227F44FE00094CDB5 /* LoginSystem */,
 				83D60E4D27F446AD0094CDB5 /* View */,
@@ -380,14 +400,18 @@
 			files = (
 				83C3502E27F9904700788E4C /* FirstPageViewController.swift in Sources */,
 				83D60E5D27F4500B0094CDB5 /* SignUpViewController.swift in Sources */,
-				83DC048D2807152800F0EEC3 /* RecordTableViewCell.swift in Sources */,
+				83DC048D2807152800F0EEC3 /* FruitDetailTableViewCell.swift in Sources */,
+				8340364528081A5400485E77 /* RecordViewController.swift in Sources */,
 				83D60E5F27F4500B0094CDB5 /* LoginHomeViewController.swift in Sources */,
+				8340364328081A3900485E77 /* RecordTableViewController.swift in Sources */,
+				8340364728081A5E00485E77 /* Record.swift in Sources */,
 				83DC048F2807154400F0EEC3 /* FruitDetailViewController.swift in Sources */,
-				83DC048B2807150900F0EEC3 /* RecordTableViewController.swift in Sources */,
+				83DC048B2807150900F0EEC3 /* FruitDetailTableViewController.swift in Sources */,
 				83D60E1B27F4420E0094CDB5 /* Fruit_Scanner.xcdatamodeld in Sources */,
 				83D60E5E27F4500B0094CDB5 /* Utilities.swift in Sources */,
 				83B4C10F28042D8500948BFF /* FruitRecognition 5.mlmodel in Sources */,
 				83D60E5C27F4500B0094CDB5 /* ForgotPasswordViewController.swift in Sources */,
+				8340364928081A7000485E77 /* RecordTableViewCell.swift in Sources */,
 				83D60E1127F4420E0094CDB5 /* AppDelegate.swift in Sources */,
 				83D60E6127F4500B0094CDB5 /* Constant.swift in Sources */,
 				83D60E5B27F4500B0094CDB5 /* LoginFirstPageViewController.swift in Sources */,
