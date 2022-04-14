@@ -17,8 +17,17 @@ import SwiftUI
 class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     @IBOutlet weak var SaveBtn: UIButton!
     //declear
+    var FreshLevel : String!
+    var fruit_Name : String!
+    //set format
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.locale = .current
+        formatter.dateFormat = "MM/dd/yyyy-HH:mm:a"
+        return formatter
+    }()
 
-    private var fruit_Name : String!
     private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
@@ -89,12 +98,9 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         guard let buffer = immage?.getCVPixelBuffer() else {
             return
         }
-        
         do{
-            
            let model = try! FruitRecognition_5(configuration: MLModelConfiguration())
            let input = FruitRecognition_5Input(image: buffer)
-            
             
            let output = try model.prediction(input: input)
             
@@ -110,7 +116,15 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
             let confidence = probs ?? 0
             fruit_Name = text
             Clabel.text = "\(String(format: "%.2f",confidence * 100)) %"
-            label.text = "fruit detected:  \(text)"
+            
+            if (confidence < 0.2){
+                FreshLevel = "Very rotten"
+            }else if (confidence > 0.4 && confidence < 0.7){
+                FreshLevel = "Medium fresh"
+            }else if (confidence > 0.7 && confidence < 1){
+                FreshLevel = "Very Fresh"
+            }
+            label.text = text
             //print("Fruit :\(text) && conf\(String(confidence))")
         }
         catch{
@@ -123,13 +137,18 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         // cancelled
         picker.dismiss(animated: true, completion: nil)
     }
-
+    var checkJPG : Bool = true
+    var checkPNG : Bool = true
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let immage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
         guard let imageData = immage.jpegData(compressionQuality: 0.8) else{
+
+            return
+        }
+        guard let imageData1 = immage.pngData() else{
             return
         }
         imageView.image = immage
@@ -138,25 +157,10 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         if (imageView.image == UIImage(systemName: "photo")){
             showAlert()
         }else{
-            let storageRef = Storage.storage().reference()
-
-            let db = Firestore.firestore()
-            let randomint = Int.random(in:0..<100)
-            if Auth.auth().currentUser != nil {
-                let user = Auth.auth().currentUser
-                if let user = user {
-                    //set image path
-                    let path = "Record/Record\(String(Int.random(in: 1..<60))).jpg"
-                    let Ref = storageRef.child(path)
-                    //upload image and record to firesotre
-                    Ref.putData(imageData, metadata: nil){
-                        _, error in
-                        if error == nil{
-                            db.collection(user.uid).document("\(self.fruit_Name!)_\(String(randomint))").setData(["FruitName": self.label.text!,"fruitFreshLevel":self.Clabel.text!,"lastUpdated":FieldValue.serverTimestamp(),"Record_URL":path])
-                        }
-                    }
-
-                }
+            if(imageData.isEmpty){
+                showConfirmAlertpng(imageDataP: imageData1)
+            }else{
+                showConfirmAlert(imageDataP: imageData)
             }
             
         }
@@ -166,16 +170,16 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         if (imageView.image == UIImage(systemName: "photo")){
             showAlert()
         }else{
-           showConfirmAlert()
+           //showConfirmAlert()
         }
     }
     
     //to RecordPage
     func toRecordPage(){
-   //     let recordViewtalbeController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.recordtableViewController) as? RecordTableViewController
+        let recordViewtableController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.recordViewtableController) as? RecordTableViewController
         
-     //   self.view.window?.rootViewController = recordViewtableController
-     //   self.view.window?.makeKeyAndVisible()
+        self.view.window?.rootViewController = recordViewtableController
+        self.view.window?.makeKeyAndVisible()
     }
     //Show Alert
     func showAlert() {
@@ -183,27 +187,104 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
         present(alert, animated: true)
     }
-    
-    func showConfirmAlert() {
+    //show recordpage alert
+    func showAlerttoRecord(){
+        let alert = UIAlertController(title: "save successful", message: "Do you want to record page?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Sure!", style: .default, handler: {action in self.toRecordPage()}))
+        alert.addAction(UIAlertAction(title: "no!", style: .cancel, handler: nil))
+    }
+    func showConfirmAlertpng(imageDataP: Data) {
         let alert = UIAlertController(title: "Save your fruit data", message: "Are you sure to save the fruit record", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Sure!", style: .default, handler: {action in self.SaveFruitRecognitionResult()}))
+        alert.addAction(UIAlertAction(title: "Sure!", style: .default, handler: {action in self.SaveFruitRecognitionResultpng(imageDatap: imageDataP)}))
         alert.addAction(UIAlertAction(title: "no!", style: .cancel, handler: nil))
         present(alert, animated: true)
     }
-    //Save data to firestore
-    func SaveFruitRecognitionResult(){
-        
+    func showConfirmAlert(imageDataP: Data) {
+        let alert = UIAlertController(title: "Save your fruit data", message: "Are you sure to save the fruit record", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Sure!", style: .default, handler: {action in self.SaveFruitRecognitionResult(imageDatap: imageDataP)}))
+        alert.addAction(UIAlertAction(title: "no!", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    //Save jpg data to firestore
+    func SaveFruitRecognitionResult(imageDatap: Data){
+        //storage setup
+        let storageRef = Storage.storage().reference()
+        //get iamgedata from picker
+        let imageData = imageDatap
+        //set firestore
         let db = Firestore.firestore()
+        //get record random number
         let randomint = Int.random(in:0..<100)
+        //check Auth
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
             if let user = user {
                 //set image path
+                let path = "Record/Record\(String(Int.random(in: 1..<60))).jpg"
+                //set image path in firebase storage
+                let Ref = storageRef.child(path)
                 //upload image and record to firesotre
-                db.collection(user.uid).document("\(fruit_Name!)_\(String(randomint))").setData(["FruitName": label.text!,"fruitFreshLevel":Clabel.text!,"lastUpdated":FieldValue.serverTimestamp()])
+                //setdate
+                let date = Date()
+                let time1 = formatter.string(from: date)
+                Ref.putData(imageData, metadata: nil){
+                    _, error in
+                    //check error
+                    if error == nil{
+                        //upload record to firebase and upload storage image path
+                        db.collection(user.uid).document("\(self.fruit_Name!) \(String(randomint))").setData([
+                            "FruitName": self.label.text!,
+                            "fruitFreshLevel":self.Clabel.text!,
+                            "lastUpdated":time1,
+                            "Record_URL":path,
+                            "FruitFreshLebal":self.FreshLevel!])
+                        //display alert ask user to record page
+                        self.showAlerttoRecord()
+                    }
                 }
 
             }
         }
-        
+        }
+        //png
+    func SaveFruitRecognitionResultpng(imageDatap: Data){
+        //storage setup
+        let storageRef = Storage.storage().reference()
+        //get iamgedata from picker
+        let imageData = imageDatap
+        //set firestore
+        let db = Firestore.firestore()
+        //get record random number
+        let randomint = Int.random(in:0..<100)
+        //check Auth
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser
+            if let user = user {
+                //set image path
+                let path = "Record/Record\(String(Int.random(in: 1..<60))).png"
+                //set image path in firebase storage
+                let Ref = storageRef.child(path)
+                //upload image and record to firesotre
+                //setdate
+                let date = Date()
+                let time1 = formatter.string(from: date)
+                Ref.putData(imageData, metadata: nil){
+                    _, error in
+                    //check error
+                    if error == nil{
+                        //upload record to firebase and upload storage image path
+                        db.collection(user.uid).document("\(self.fruit_Name!) \(String(randomint))").setData([
+                            "FruitName": self.label.text!,
+                            "fruitFreshLevel":self.Clabel.text!,
+                            "lastUpdated":time1,
+                            "Record_URL":path,
+                            "FruitFreshLebal":self.FreshLevel!])
+                        //display alert ask user to record page
+                        self.showAlerttoRecord()
+                    }
+                }
+
+            }
+        }
+        }
 }

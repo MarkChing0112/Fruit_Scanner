@@ -40,7 +40,7 @@ class FruitDetailViewController: UIViewController {
     
         FruitName_lbl.text = "Nurtrvalue Of \(FruitName!)"
         Sessionlbl.text = ""
-        titleLbl.text = "Nutrition Facts of"
+        titleLbl.text = "Nutrition Facts of \(FruitName!)"
         Fruit_DSClbl.numberOfLines = 0
         Fruit_DSClbl.text = "\(Fruit_NV!)"
         Sessionlbl.text = Fruit_PD

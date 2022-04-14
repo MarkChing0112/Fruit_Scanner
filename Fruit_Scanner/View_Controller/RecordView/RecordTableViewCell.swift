@@ -8,7 +8,10 @@
 import UIKit
 
 class RecordTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var RecordImageView: UIImageView!
+    @IBOutlet weak var RecordFruitNameLBL: UILabel!
+    @IBOutlet weak var RecordDateLBL: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

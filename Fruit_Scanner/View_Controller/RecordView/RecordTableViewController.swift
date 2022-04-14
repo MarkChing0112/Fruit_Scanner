@@ -6,84 +6,96 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseStorage
 
 class RecordTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    var record = [Record]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getRecord()
+        self.tableView.reloadData()
     }
+    
+    func getRecord() {
+        let db = Firestore.firestore()
 
+        //check Auth
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser
+            if let user = user {
+                db.collection(user.uid).getDocuments() {(snapshot, err) in
+            
+            if err == nil {
+                if let snapshot = snapshot {
+                    self.record = snapshot.documents.map {
+                        RecordData in
+                        return Record( FruitName: RecordData["FruitName"] as? String ?? "",
+                                       Record_URL: RecordData["Record_URL"] as? String ?? "",
+                                       FruitFreshLevel: RecordData["fruitFreshLevel"] as? String ?? "",
+                                       FruitFreshLebal: RecordData["FruitFreshLebal"] as? String ?? "",
+                                       uploadDate: RecordData["lastUpdated"] as? String ?? "")
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+            }
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return record.count
     }
-
-    /*
+    //cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! RecordTableViewCell
+        
 
-        // Configure the cell...
+        //get firebase storage image
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let fileRef = storageRef.child(record[indexPath.row].Record_URL)
+        
+        fileRef.getData(maxSize: 10*255*255) { Data, Error in
+            if Error == nil && Data != nil {
+                cell2.RecordImageView.image = UIImage(data: Data!)
+            }
+        }
 
-        return cell
+        //display firebase store data
+        cell2.RecordFruitNameLBL.text = record[indexPath.row].FruitName
+        cell2.RecordDateLBL.text = record[indexPath.row].uploadDate
+        
+        return cell2
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // pass data to record page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? RecordViewController {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                destination.FruitName = record[indexPath.row].FruitName
+                destination.FruitFreshLevel = record[indexPath.row].FruitFreshLevel
+                destination.FruitFreshLebal = record[indexPath.row].FruitFreshLebal
+                destination.uploadDate = record[indexPath.row].uploadDate
+                destination.Record_URL = record[indexPath.row].Record_URL
+            }
+        }
     }
-    */
-
+    // tableView Height
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
 }
