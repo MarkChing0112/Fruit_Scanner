@@ -140,88 +140,133 @@ TEgQVkM
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hvB-yB-wSt">
-                                <rect key="frame" x="20" y="233" width="374" height="160"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pile-fresh-fruits" translatesAutoresizingMaskIntoConstraints="NO" id="a0k-G6-Eha">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="355"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FruitHub Star1" translatesAutoresizingMaskIntoConstraints="NO" id="w1v-MB-Fnp">
+                                <rect key="frame" x="0.0" y="384" width="283" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hvB-yB-wSt">
+                                <rect key="frame" x="40" y="466.66666666666674" width="334" height="204"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2r-gj-a89">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="sUt-sH-3ck"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.98792417359999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2r-gj-a89">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="61"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Go To Scanner!!!!" backgroundImage="FullBtn_themeGradient"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" image="FullBtn_themeGradient"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="l.joystick.tilt.up.fill" catalog="system">
+                                            <backgroundConfiguration key="background"/>
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Start To Scan Fruit">
                                                     <attributes>
+                                                        <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <font key="NSFont" size="24" name="HelveticaNeue-BoldItalic"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
+                                            <attributedString key="attributedSubtitle">
+                                                <fragment content="Scan Fresh Fruit In Every Day!!">
+                                                    <attributes>
+                                                        <font key="NSFont" size="15" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="8Yn-8N-Z57" kind="show" id="8wi-2S-d9z"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10c-gt-Qqr">
-                                        <rect key="frame" x="0.0" y="80" width="374" height="80"/>
-                                        <color key="tintColor" white="0.98792417359999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="0.0" y="70.999999999999943" width="334" height="70.333333333333314"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" image="FullBtn_themeGradient"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" imagePadding="10" titlePadding="2">
+                                            <imageReference key="image" image="book.fill" catalog="system" symbolScale="large"/>
+                                            <backgroundConfiguration key="background"/>
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Fruit description">
                                                     <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" size="30" name="GillSans-SemiBoldItalic"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="31" name="GillSans-SemiBoldItalic"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
+                                            <attributedString key="attributedSubtitle">
+                                                <fragment content="Start to learn fruit info!!!">
+                                                    <attributes>
+                                                        <font key="NSFont" size="15" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="dBQ-ro-kKz" kind="show" id="CZR-P2-hRK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-hd-dM2">
+                                        <rect key="frame" x="0.0" y="151.33333333333331" width="334" height="52.666666666666657"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="photo.artframe" catalog="system">
+                                            <backgroundConfiguration key="background"/>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Record">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="32" name="HelveticaNeue-MediumItalic"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <attributedString key="attributedSubtitle">
+                                                <fragment content="Here to visit your records">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="toolTip"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="WXc-8i-Rzf" kind="show" id="Rkw-Pw-raq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="10c-gt-Qqr" firstAttribute="width" secondItem="e2r-gj-a89" secondAttribute="width" id="gpR-WO-kDM"/>
-                                    <constraint firstItem="10c-gt-Qqr" firstAttribute="height" secondItem="e2r-gj-a89" secondAttribute="height" id="uAQ-mZ-AED"/>
-                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-hd-dM2">
-                                <rect key="frame" x="176" y="733" width="63" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="">
-                                    <imageReference key="image" image="list.bullet" catalog="system" symbolScale="large" renderingMode="template"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="WXc-8i-Rzf" kind="show" id="Rkw-Pw-raq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="chS-jV-ctW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hvB-yB-wSt" firstAttribute="leading" secondItem="chS-jV-ctW" secondAttribute="leading" constant="20" id="VDB-Of-n2y"/>
-                            <constraint firstItem="chS-jV-ctW" firstAttribute="bottom" secondItem="hvB-yB-wSt" secondAttribute="bottom" constant="420" id="Z3x-FE-Vot"/>
-                            <constraint firstItem="chS-jV-ctW" firstAttribute="trailing" secondItem="hvB-yB-wSt" secondAttribute="trailing" constant="20" id="m1T-pJ-I39"/>
+                            <constraint firstItem="chS-jV-ctW" firstAttribute="trailing" secondItem="hvB-yB-wSt" secondAttribute="trailing" constant="40" id="DTM-n8-aBt"/>
+                            <constraint firstItem="hvB-yB-wSt" firstAttribute="leading" secondItem="chS-jV-ctW" secondAttribute="leading" constant="40" id="M0w-fC-ZBH"/>
+                            <constraint firstItem="chS-jV-ctW" firstAttribute="bottom" secondItem="hvB-yB-wSt" secondAttribute="bottom" constant="142.33000000000001" id="Nkl-wp-NBn"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="TUi-WC-9eI">
-                        <barButtonItem key="rightBarButtonItem" title="SignOut" id="x6M-xe-8iv">
+                        <barButtonItem key="rightBarButtonItem" title="SignOut" width="2" id="x6M-xe-8iv">
                             <connections>
                                 <action selector="SignOutBtnOnTap:" destination="Qmf-80-W2g" id="cB9-9I-blo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="FruitDesBtn" destination="10c-gt-Qqr" id="4NO-dl-Pog"/>
+                        <outlet property="RecordBtn" destination="YN9-hd-dM2" id="Lt4-tW-Vw6"/>
+                        <outlet property="ScanBtn" destination="e2r-gj-a89" id="ViJ-WW-XGm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQE-AW-mep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -828,14 +873,17 @@ TEgQVkM
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gFh-DN-Rsl"/>
+        <segue reference="Rkw-Pw-raq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AppStore" width="1032" height="1032"/>
         <image name="FruitHub Star1" width="147" height="27"/>
         <image name="FullBtn_themeGradient" width="352" height="118"/>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="l.joystick.tilt.up.fill" catalog="system" width="122" height="128"/>
         <image name="monika-grabkowska-qSkWlOBHia0-unsplash" width="4000" height="6000"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="pile-fresh-fruits" width="4800" height="3200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
