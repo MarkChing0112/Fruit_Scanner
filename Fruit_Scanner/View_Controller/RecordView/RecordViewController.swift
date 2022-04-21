@@ -49,12 +49,22 @@ class RecordViewController: UIViewController {
         FruitFreshlabelLBL.text = FruitFreshLebal
         FruitFreshLevelLBL.text = FruitFreshLevel
         //get image
-        fileRef.getData(maxSize: 10*255*255) { Data, Error in
+        fileRef.getData(maxSize: 10*3024*4032) { Data, Error in
             if Error == nil && Data != nil {
                 self.recordImageView.image = UIImage(data: Data!)
                 self.RecordMainImageView.image = UIImage(data: Data!)
             }
         }
         
+    }
+    func tohomepage(){
+        let firstPageNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstPageNavigationViewController) as? FirstPageNavigationViewController
+        
+        self.view.window?.rootViewController = firstPageNavigationViewController
+        self.view.window?.makeKeyAndVisible()
+    }
+    
+    @IBAction func HomePageBtn(_ sender: Any) {
+        tohomepage()
     }
 }

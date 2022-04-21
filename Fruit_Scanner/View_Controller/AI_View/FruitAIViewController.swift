@@ -32,9 +32,10 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         let formatter2 = DateFormatter()
         formatter2.timeZone = .current
         formatter2.locale = .current
-        formatter2.dateFormat = "MM/dd/yyyy-HH:mm"
+        formatter2.dateFormat = "MM-dd-yyyy-HH:mm:a"
         return formatter2
     }()
+
     private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
@@ -64,13 +65,6 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
         view.addSubview(imageView)
         view.addSubview(Clabel)
         // Do any additional setup after loading the view.
-        //let tap = UITapGestureRecognizer(
-        //    target: self,
-        //    action: #selector(didTapImage)
-        //)
-        //tap.numberOfTapsRequired = 1
-        //imageView.isUserInteractionEnabled = true
-        //imageView.addGestureRecognizer(tap)
         RecordBtn.alpha = 0
     }
     
@@ -124,13 +118,6 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
             
            let output = try model.prediction(input: input)
             
-            //if let output = output {
-            //    let results = output.classLabelProbs.sorted { $0.1 > $1.1}
-            //    let result = results.map{(key, value) in
-           //         return "\(key) = \(String(format: "%.2f", value * 100))%"
-           //     }.joined(separator: "\n")
-           //     self.label.text = result
-           // }
             let probs = output.classLabelProbs[output.classLabel]
             let text = output.classLabel
             let confidence = probs ?? 0
@@ -244,19 +231,20 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
             let user = Auth.auth().currentUser
             if let user = user {
                 //set image path
-                let path = "Record/Record\(String(Int.random(in: 1..<60))).jpg"
+                let path = "Record\(user.uid)/Record\(String(Int.random(in: 1..<60))).png"
                 //set image path in firebase storage
                 let Ref = storageRef.child(path)
                 //upload image and record to firesotre
                 //setdate
                 let date = Date()
                 let time1 = formatter.string(from: date)
+                let time2 = formatter2.string(from: date)
                 Ref.putData(imageData, metadata: nil){
                     _, error in
                     //check error
                     if error == nil{
                         //upload record to firebase and upload storage image path
-                        db.collection(user.uid).document("\(self.fruit_Name!) \(String(randomint))").setData([
+                        db.collection(user.uid).document("\(self.fruit_Name!) \(String(time2))").setData([
                             "FruitName": self.label.text!,
                             "fruitFreshLevel":self.Clabel.text!,
                             "lastUpdated":time1,
@@ -285,7 +273,8 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
             let user = Auth.auth().currentUser
             if let user = user {
                 //set image path
-                let path = "Record/Record\(String(Int.random(in: 1..<60))).png"
+                //let path = "Record/Record\(String(Int.random(in: 1..<60))).png"
+                let path = "Record\(user.uid)/Record\(String(Int.random(in: 1..<60))).png"
                 //set image path in firebase storage
                 let Ref = storageRef.child(path)
                 //upload image and record to firesotre
@@ -298,7 +287,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
                     //check error
                     if error == nil{
                         //upload record to firebase and upload storage image path
-                        db.collection(user.uid).document("\(self.fruit_Name!) \(String(randomint))").setData([
+                        db.collection(user.uid).document("\(self.fruit_Name!) \(String(time2))").setData([
                             "FruitName": self.label.text!,
                             "fruitFreshLevel":self.Clabel.text!,
                             "lastUpdated":time1,

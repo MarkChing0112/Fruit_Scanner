@@ -82,13 +82,12 @@ class SignUpViewController: UIViewController {
     }
     //go to home view
     func transitionToHome() {
-        
         let firstPageNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstPageNavigationViewController) as? FirstPageNavigationViewController
         
         view.window?.rootViewController = firstPageNavigationViewController
         view.window?.makeKeyAndVisible()
-        
     }
+    
     //insert user data to database
     func FirebaseinsertData_Senior(){
         // Create cleaned versions of the data
@@ -111,15 +110,18 @@ class SignUpViewController: UIViewController {
             else {
                 // User was created successfully, now store the first name and last name
                 let db = Firestore.firestore()
-
-                db.collection("users").document("Senior").setData(["User_Name":User_Name,"firstname":firstName, "lastname":lastName,"uid": result!.user.uid ]) { (error) in
+                if Auth.auth().currentUser != nil {
+                    let user = Auth.auth().currentUser
+                    if let user = user {
+                db.collection("users").document(user.uid).setData(["User_Name":User_Name,"firstname":firstName, "lastname":lastName,"uid": result!.user.uid ]) { (error) in
                     
                     if error != nil {
                         // Show error message
                         self.showError("Error saving user data")
+                            }
+                        }
                     }
                 }
-                
                 // Transition to the home screen
                 self.transitionToHome()
             }

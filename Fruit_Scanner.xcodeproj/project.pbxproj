@@ -16,6 +16,7 @@
 		8340364528081A5400485E77 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340364428081A5400485E77 /* RecordViewController.swift */; };
 		8340364728081A5E00485E77 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340364628081A5E00485E77 /* Record.swift */; };
 		8340364928081A7000485E77 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340364828081A7000485E77 /* RecordTableViewCell.swift */; };
+		834202C32811557A00B2B943 /* MakeHyperLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834202C22811557A00B2B943 /* MakeHyperLink.swift */; };
 		83A6E7E728057F2400A99B6D /* FirstPageNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6E7E628057F2400A99B6D /* FirstPageNavigationViewController.swift */; };
 		83B4C103280409C100948BFF /* FruitAIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4C102280409C100948BFF /* FruitAIViewController.swift */; };
 		83B4C1072804105300948BFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4C1062804105300948BFF /* Extensions.swift */; };
@@ -66,6 +67,7 @@
 		8340364428081A5400485E77 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		8340364628081A5E00485E77 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		8340364828081A7000485E77 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		834202C22811557A00B2B943 /* MakeHyperLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeHyperLink.swift; sourceTree = "<group>"; };
 		83A6E7E628057F2400A99B6D /* FirstPageNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageNavigationViewController.swift; sourceTree = "<group>"; };
 		83B4C102280409C100948BFF /* FruitAIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitAIViewController.swift; sourceTree = "<group>"; };
 		83B4C1062804105300948BFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				83DC048A2807150800F0EEC3 /* FruitDetailTableViewController.swift */,
 				83DC048C2807152800F0EEC3 /* FruitDetailTableViewCell.swift */,
 				83DC048E2807154400F0EEC3 /* FruitDetailViewController.swift */,
+				834202C22811557A00B2B943 /* MakeHyperLink.swift */,
 			);
 			path = FruitDetailView;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				83D60E6127F4500B0094CDB5 /* Constant.swift in Sources */,
 				83D60E5B27F4500B0094CDB5 /* LoginFirstPageViewController.swift in Sources */,
 				83B4C1072804105300948BFF /* Extensions.swift in Sources */,
+				834202C32811557A00B2B943 /* MakeHyperLink.swift in Sources */,
 				83D60E1327F4420E0094CDB5 /* SceneDelegate.swift in Sources */,
 				83A6E7E728057F2400A99B6D /* FirstPageNavigationViewController.swift in Sources */,
 				83DC04732806FAE000F0EEC3 /* Fruit.swift in Sources */,

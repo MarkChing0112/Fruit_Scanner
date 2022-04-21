@@ -12,4 +12,5 @@ struct Fruit{
     var Fruit_NV : String!
     var Fruit_PD : String!
     var Fruit_URL : String!
+    var Fruit_Source: String!
 }

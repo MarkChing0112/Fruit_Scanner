@@ -31,7 +31,8 @@ class FruitDetailTableViewController: UITableViewController {
                         return Fruit(Fruit1: Fruitdata["Fruit_Name"] as? String ?? "",
                                      Fruit_NV: Fruitdata["Fruit_NV"] as? String ?? "",
                                      Fruit_PD: Fruitdata["Fruit_PD"] as? String ?? "",
-                                     Fruit_URL: Fruitdata["Fruit_URL"] as? String ?? "")
+                                     Fruit_URL: Fruitdata["Fruit_URL"] as? String ?? "",
+                                     Fruit_Source: Fruitdata["Source"] as? String ?? "")
                     }
                     
                     DispatchQueue.main.async {
@@ -80,7 +81,7 @@ class FruitDetailTableViewController: UITableViewController {
                 destination.Fruit_NV = fruit[indexPath.row].Fruit_NV
                 destination.Fruit_PD = fruit[indexPath.row].Fruit_PD
                 destination.FruitImage = fruit[indexPath.row].Fruit_URL
-                
+                destination.Source = fruit[indexPath.row].Fruit_Source
             }
         }
     }
