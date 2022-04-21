@@ -244,7 +244,7 @@ class FruitAIViewController: UIViewController, UIImagePickerControllerDelegate, 
                     //check error
                     if error == nil{
                         //upload record to firebase and upload storage image path
-                        db.collection(user.uid).document("\(self.fruit_Name!) \(String(time2))").setData([
+                        db.collection("Record").document(user.uid).collection("data").document("\(self.fruit_Name!) \(String(time2))").setData([
                             "FruitName": self.label.text!,
                             "fruitFreshLevel":self.Clabel.text!,
                             "lastUpdated":time1,

@@ -27,7 +27,7 @@ class RecordTableViewController: UITableViewController {
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
             if let user = user {
-                db.collection(user.uid).getDocuments() {(snapshot, err) in
+                db.collection("Record").document(user.uid).collection("data").getDocuments() {(snapshot, err) in
             
             if err == nil {
                 if let snapshot = snapshot {
